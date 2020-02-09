@@ -72,8 +72,7 @@ public class LambdaRequestHandler
 ```java
 public class LambdaRequestStreamHandler
   implements RequestStreamHandler {
-    public void handleRequest(InputStream inputStream,
-      OutputStream outputStream, Context context) {
+    public void handleRequest(InputStream inputStream, OutputStream outputStream, Context context) {
         String input = IOUtils.toString(inputStream, "UTF-8");
         outputStream.write(("Hello World - " + input).getBytes());
     }
@@ -94,22 +93,22 @@ AWS Console에 로그인 하고 서비스에서 Lambda를 클릭하십시오.
 새로운 Lambda를 만듭니다.
 1. 새로 작성을 선택
 2. 기본 정보
-  - 함수 이름 : LambdaTest
-  - Runtime : java8 선택
-  - 권한 : 다른 AWS 리소스가 Lambda 기능에 사용되는 경우 기존 역할을 생성 / 사용하여 액세스를 제공하고 정책 템플릿을 정의하십시오.
-    - 기존 Lambda 권한을 가진 새 역할 생성
-    - 기존 역할 사용
-    - AWS 정책 템플릿에서 새 역할 생성
+    - 함수 이름 : LambdaTest
+    - Runtime : java8 선택
+    - 권한 : 다른 AWS 리소스가 Lambda 기능에 사용되는 경우 기존 역할을 생성 / 사용하여 액세스를 제공하고 정책 템플릿을 정의하십시오.
+      - 기존 Lambda 권한을 가진 새 역할 생성
+      - 기존 역할 사용
+      - AWS 정책 템플릿에서 새 역할 생성
 3. 함수 생성
 4. 함수 코드
-  - Code entry type : ".zip 또는 Jar 파일 업로드"를 선택 
-  - 업로드 버튼을 클릭 
-  - Lambda 코드가 포함 된 파일을 선택
-  - 핸들러 : com.lj.lambda.batch.LambdaMain::handleRequest
-  - 기본 설정
-    - 메모리 : Lambda 함수에서 사용할 메모리를 제공하십시오.
-    - 제한 시간 : 각 요청에 대해 Lambda 기능을 실행할 시간을 선택하십시오.
-  - 설명 : Lambda 함수를 설명
+    - Code entry type : ".zip 또는 Jar 파일 업로드"를 선택 
+    - 업로드 버튼을 클릭 
+    - Lambda 코드가 포함 된 파일을 선택
+    - 핸들러 : com.lj.lambda.batch.LambdaMain::handleRequest
+    - 기본 설정
+      - 메모리 : Lambda 함수에서 사용할 메모리를 제공하십시오.
+      - 제한 시간 : 각 요청에 대해 Lambda 기능을 실행할 시간을 선택하십시오.
+    - 설명 : Lambda 함수를 설명
 5. Save를 클릭하여 저장합니다.
 
 ## 함수 호출
